@@ -1,0 +1,100 @@
+[build]
+  command = "pnpm build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--version"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=63072000"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/ferro-crema-og.png"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/favicon.png"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/icon"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/icon/*"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/apple-icon"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/apple-icon/*"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/opengraph-image"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/opengraph-image/*"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/twitter-image"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/twitter-image/*"
+  [headers.values]
+    Cache-Control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/logo.png"
+  [headers.values]
+    Cache-Control = "public,max-age=2592000,immutable"
+
+[dev]
+  command = "pnpm dev"
+  port = 3000
+  framework = "next"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["public/**/*"]
+
+[images]
+  remote_images = ["https://images.unsplash.com/.*"]
+
+[context.production.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[context.deploy-preview.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[context.branch-deploy.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[context.dev.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
