@@ -3356,6 +3356,50 @@ footer.footer {
 @media (max-width: 800px) { .product-breadcrumb,.product-detail-hero,.product-specs-section,.product-related-section { padding-inline: 20px; }.product-detail-hero,.product-specs-section,.product-compatibility-section { grid-template-columns: 1fr; }.product-detail-hero { padding-top: 24px; padding-bottom: 55px; gap: 32px; }.product-gallery-frame,.product-gallery-frame img { min-height: 0; height: min(92vw,480px); }.product-specs-section { gap: 32px; padding-block: 48px; }.product-compatibility-section { padding: 52px 20px; gap: 32px; }.product-assurances { padding: 0 20px; grid-template-columns: 1fr; }.product-assurances > div,.product-assurances > div:first-child { border-left: 1px solid var(--line); border-bottom: 0; }.product-assurances > div:last-child { border-bottom: 1px solid var(--line); }.product-related-section { padding-block: 65px 75px; }.product-related-section .product-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 500px) { .product-breadcrumb { padding-top: 22px; }.product-detail-info h1 { font-size: 40px; }.product-spec-grid,.product-compatible-list { grid-template-columns: 1fr; }.product-buy-row { align-items: stretch; flex-direction: column; }.product-quantity { width: 100%; justify-content: space-between; }.product-add-button { min-height: 48px; }.product-related-section .product-grid { grid-template-columns: 1fr; }.product-detail-price-row strong { font-size: 29px; } }
 
+/* ── Final mobile navigation and footer safeguards ──────────────── */
+@media (max-width: 1000px) {
+  .header .nav { display: none !important; }
+  .header .mobile-menu { display: inline-flex; flex: 0 0 auto; }
+  .header-inner { padding-inline: 22px; gap: 16px; }
+  .header-actions { margin-left: auto; }
+}
+@media (max-width: 560px) {
+  .announcement { height: 34px; min-height: 34px; padding: 0 42px 0 16px; justify-content: center; font-size: 8.5px; line-height: 1.2; letter-spacing: .035em; }
+  .announcement span:not(:first-child) { display: none !important; }
+  .announcement span:first-child { justify-content: center; text-align: center; }
+  .announcement span:first-child svg { width: 11px; height: 11px; flex: 0 0 auto; }
+  .announcement button { right: 10px; }
+  .header-inner { height: 64px; padding-inline: 14px; gap: 10px; }
+  .header .brand-logo { height: 32px; max-width: 132px; }
+  .header-actions { gap: 2px; }
+  .header-actions button { width: 40px; height: 40px; min-width: 40px; min-height: 40px; }
+  .header-actions button:nth-child(2), .header-actions button:nth-child(3) { display: none; }
+  .footer-main { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
+  .footer-main > div:first-child { grid-column: auto; }
+  footer.footer { padding: 42px 20px 20px; }
+  .footer-newsletter { max-width: none; padding: 18px; }
+  .footer-newsletter-form { flex-direction: column; }
+  .footer-newsletter-input, .footer-newsletter-btn { width: 100%; height: 46px; }
+  .footer-bottom { align-items: stretch; text-align: left; }
+  .footer-bottom > div:last-child { flex-wrap: wrap; gap: 12px !important; }
+  .search-overlay { padding: 18px; }
+  .search-box { margin-top: 5vh; min-width: 0; }
+  .search-chips { flex-wrap: wrap; overflow: visible; }
+  .search-chips span { min-width: 0; max-width: 100%; }
+}
+
+@media (max-width: 1000px) {
+  .mobile-menu-layer { z-index: 2100; }
+  .mobile-drawer { z-index: 1; }
+}
+
+@media (max-width: 380px) {
+  .header .brand-logo { max-width: 112px; height: auto; }
+  .header-inner { gap: 4px; }
+  .search-chips { gap: 7px; }
+  .search-chips span { font-size: 10px; padding: 8px 10px; }
+}
+
 
 /* ═══════════════════════════════════════════════════════════════════
    FERRO CREMA — LUXURY SUITE & INNER PAGES STYLING
